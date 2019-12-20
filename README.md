@@ -2,6 +2,10 @@
 
 这是一个集成 [commitizen](https://www.npmjs.com/package/commitizen)、[commitlint](https://github.com/conventional-changelog/commitlint)、[standard-version](https://www.npmjs.com/package/standard-version)、[conventional-changelog](https://www.npmjs.com/package/conventional-changelog) 、[conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli) 基础配置的 Vue CLI 插件。
 
+![NPM version](https://img.shields.io/npm/v/vue-cli-plugin-commitlint-release)
+![Downloads](https://img.shields.io/npm/dw/vue-cli-plugin-commitlint-release)
+![License](https://img.shields.io/npm/l/vue-cli-plugin-commitlint-release)
+
 _它可以解决以下几个问题：_
 
 1. 自动化提示 `commit message`
@@ -12,11 +16,10 @@ _它可以解决以下几个问题：_
 
 ## 安装
 
-作为一个 `Vue CLI` 安装，安装方法有2种：
+_作为一个 `Vue CLI` 安装，安装方法有2种：_
 
 ```
-# 为了防止和已有的包冲突，可以提前移除 node_modules 后再安装
-
+# 为了防止和已有的包冲突，可以提前移除 `node_modules` 后再安装
 rm -rf node_modules
 
 vue add commitlint-release
@@ -24,7 +27,17 @@ vue add commitlint-release
 vue invoke commitlint-release
 ```
 
-这时候你的项目里就会增加一个    `commitlint.config.js` 文件、`release.sh` 文件，以及 package.json 增加一些 `scripts`、`devDependencies`，以及一个 `config` 和 一个 `husky` 的配置.
+这时候你的项目里就会增加一个    `commitlint.config.js` 文件、`release.sh` 文件，以及 package.json 增加一些 `scripts`、`devDependencies`，以及一个 `config` 和 `husky` 的配置.
+
+_下面就需要开始安装一些依赖了。_
+
+首先，全局安装 `commitizen` 和 `cz-conventional-changelog`，并支持 `Angular` 的 `Commit message` 格式
+
+```
+npm install -g commitizen cz-conventional-changelog
+
+commitizen init cz-conventional-changelog --save --save-exact
+```
 
 然后再运行
 
@@ -49,6 +62,7 @@ git add .
 ```
 git cz
 # or
+# 如果你的 NPM 5.2+ 
 npm run commit
 ```
 
@@ -96,6 +110,32 @@ npm ERR! Move it away, and try again.
 rm -rf node_modules
 npm i
 ```
+
+### 执行 `commitizen init cz-conventional-changelog --save --save-exact` 命令的时候遇到 `A previous adapter is already configured` 错误
+
+```
+Attempting to initialize using the npm package cz-conventional-changelog
+Error: Error: A previous adapter is already configured. Use --force to override
+    adapterConfig.path: ./node_modules/cz-conventional-changelog
+    repoPath: /Users/jojo
+    CLI_PATH: /usr/local/lib/node_modules/commitizen/
+    installAdapterCommand: npm install cz-conventional-changelog --save-dev
+    adapterNpmName: cz-conventional-changelog
+```
+解决办法：加 --force
+
+```
+commitizen init cz-conventional-changelog --save --save-exact --force
+```
+
+### 全局安装 npm 包的时候遇到权限问题
+```
+Permission denied
+```
+
+解决办法：命令行前加 sudo 或者参考 [fixing npm permissions](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
+
+
 ## License
 
 ISC
