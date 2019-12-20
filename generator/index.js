@@ -17,7 +17,7 @@ module.exports = (api) => {
 			"hooks": {
 				"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 			}
-		}
+		},
 		devDependencies: {
 			"@commitlint/cli": "^8.2.0",
 			"@commitlint/config-conventional": "^8.2.0",

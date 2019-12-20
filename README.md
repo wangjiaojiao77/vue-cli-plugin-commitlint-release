@@ -4,7 +4,7 @@
 
 _它可以解决以下几个问题：_
 
-1. 自动化书写 `commit message`
+1. 自动化提示 `commit message`
 2. 自动化校验 `commit message` 是否符合规范
 3. 自动更新 `package.json` 里的版本号
 4. 自动生成 `changelog`，更好的维护版本迭代
@@ -33,7 +33,7 @@ npm install
 
 ## 使用
 
-修改代码后，按照以下步骤执行即可.
+### 修改代码后，按照以下步骤执行即可.
 
 add 
    
@@ -41,19 +41,57 @@ add
 git add .
 ```
 
-自动化 `commit message`
+### 自动化 `commit message`
 ```
 git cz
 # or
 npm run commit
 ```
 
-自动更新版本号并生成 `changelog`
+### 自动更新版本号并生成 `changelog`
 
 ```
 npm run publish
 ```
 
+输入命令后，提示输入 [ major | minor | patch ]，选择哪一种参数可以参考如下解释，以当前版本 1.0.0 为例：
+
+- major：主版本号，当你做了不兼容的 API 修改。这时候的 version 应该为 2.0.0。
+- minor：次版本号，当你做了向下兼容的功能性新增。这时候的 version 应该为 1.1.0。
+- patch：修订号，当你做了向下兼容的问题修正。这时候的 version 应该为 1.0.1。
+
+具体参考：[semver 语义化版本控制规范](https://semver.org/lang/zh-CN/)
+
+## 常见问题
+
+### command not found: vue
+
+解决办法：全局安装 vue cli
+
+```
+npm install -g @vue/cli
+# or
+yarn global add @vue/cli
+```
+
+### File exists
+```
+npm ERR! path /Users/jojo/node_modules/babel-eslint/node_modules/@babel/traverse/node_modules/.bin/babylon
+
+npm ERR! code EEXIST
+
+npm ERR! Refusing to delete /Users/jojo/wanba/front-activity/node_modules/babel-eslint/node_modules/@babel/traverse/node_modules/.bin/babylon: containing path /Users/jojo/node_modules/babel-eslint/node_modules/@babel/traverse/node_modules/babylon isn't under npm's control
+
+npm ERR! File exists: /Users/jojo/wanba/front-activity/node_modules/babel-eslint/node_modules/@babel/traverse/node_modules/.bin/babylon
+
+npm ERR! Move it away, and try again.
+```
+解决办法：
+删除 node_modules 重新安装
+```
+rm -rf node_modules
+npm i
+```
 ## License
 
 ISC
