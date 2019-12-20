@@ -15,6 +15,10 @@ _它可以解决以下几个问题：_
 作为一个 `Vue CLI` 安装，安装方法有2种：
 
 ```
+# 为了防止和已有的包冲突，可以提前移除 node_modules 后再安装
+
+rm -rf node_modules
+
 vue add commitlint-release
 # or
 vue invoke commitlint-release

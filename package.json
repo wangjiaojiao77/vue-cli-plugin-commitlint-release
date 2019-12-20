@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-commitlint-release",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "Integrate the basic configuration of commitizen, commitlint, standard-version, conversin-changelog to make the commit message more compliant, update the version number, and generate changelog more automated",
   "keywords": ["commitizen","commitlint","standard-version","conversin-changelog"],
   "main": "index.js",
@@ -9,5 +9,15 @@
     "type": "git",
     "url": "https://github.com/wangjiaojiao77/vue-cli-plugin-commitlint-release"
   },
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "commitizen": "^4.0.3",
+    "conventional-changelog": "^3.1.18",
+    "conventional-changelog-cli": "^2.0.31",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0",
+    "standard-version": "^7.0.1"
+  }
 }
