@@ -135,6 +135,9 @@ Permission denied
 
 解决办法：命令行前加 sudo 或者参考 [fixing npm permissions](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
 
+## Tips
+
+我会尽我最大努力来维护这个项目，所以有问题一定要给我提 [issues](https://github.com/wangjiaojiao77/vue-cli-plugin-commitlint-release/issues) 哟～
 
 ## License
 
