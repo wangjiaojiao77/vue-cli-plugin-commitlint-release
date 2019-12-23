@@ -6,7 +6,7 @@ module.exports = (api) => {
 			"release": "standard-version",
 			"commit": "npx git-cz",
 			"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-			"push": "sh release.sh"
+			"push": "node commitlint.script.js"
 		},
 		config: {
 			"commitizen": {
@@ -20,6 +20,7 @@ module.exports = (api) => {
 		},
 		devDependencies: {
 			"@commitlint/cli": "^8.2.0",
+			"inquirer": "^7.0.1",
 			"@commitlint/config-conventional": "^8.2.0",
 			"commitizen": "^4.0.3",
 			"conventional-changelog": "^3.1.18",
