@@ -1,6 +1,6 @@
 # Vue CLI Plugin Commitlint Release
 
-这是一个集成 [commitizen](https://www.npmjs.com/package/commitizen)、[commitlint](https://github.com/conventional-changelog/commitlint)、[standard-version](https://www.npmjs.com/package/standard-version)、[conventional-changelog](https://www.npmjs.com/package/conventional-changelog) 、[conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli) 基础配置的 Vue CLI 插件。
+这是一个集成了 [commitizen](https://www.npmjs.com/package/commitizen)、[commitlint](https://github.com/conventional-changelog/commitlint)、[standard-version](https://www.npmjs.com/package/standard-version)、[conventional-changelog](https://www.npmjs.com/package/conventional-changelog) 、[conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli) 基础配置的 Vue CLI 插件。
 
 ![NPM version](https://img.shields.io/npm/v/vue-cli-plugin-commitlint-release)
 ![Downloads](https://img.shields.io/npm/dw/vue-cli-plugin-commitlint-release)

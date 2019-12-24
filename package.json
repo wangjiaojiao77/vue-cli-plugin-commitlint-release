@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-commitlint-release",
   "version": "1.0.16",
-  "description": "Integrate the basic configuration of commitizen, commitlint, standard-version, conversin-changelog to make the commit message more compliant, update the version number, and generate changelog more automated",
+  "description": "这是一个集成了 commitizen、commitlint、standard-version、conventional-changelog 、conventional-changelog-cli 基础配置的 Vue CLI 插件。",
   "keywords": [
     "commitizen",
     "commitlint",
