@@ -6,7 +6,9 @@ module.exports = (api) => {
 			"release": "standard-version",
 			"commit": "npx git-cz",
 			"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-			"push": "sh release.sh"
+			"push": "node commitlint.script.js",
+			"preinstall": "rm -rf node_modules",
+			"postinstall": "./node_modules/.bin/commitizen init cz-conventional-changelog --save --save-exact --force"
 		},
 		config: {
 			"commitizen": {
@@ -26,7 +28,9 @@ module.exports = (api) => {
 			"conventional-changelog-cli": "^2.0.31",
 			"cz-conventional-changelog": "^3.0.2",
 			"husky": "^3.1.0",
-			"standard-version": "^7.0.1"
-    }
-  })
+			"standard-version": "^7.0.1",
+			"inquirer": "^7.0.1",
+			"shelljs": "^0.8.3"
+		}
+  	})
 }
