@@ -28,11 +28,9 @@ module.exports = (api) => {
 			"conventional-changelog-cli": "^2.0.31",
 			"cz-conventional-changelog": "^3.0.2",
 			"husky": "^3.1.0",
-			"standard-version": "^7.0.1"
-		},
-		"dependencies": {
+			"standard-version": "^7.0.1",
 			"inquirer": "^7.0.1",
 			"shelljs": "^0.8.3"
-		},
-  })
+		}
+  	})
 }
