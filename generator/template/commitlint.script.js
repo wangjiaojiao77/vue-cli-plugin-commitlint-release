@@ -1,6 +1,10 @@
-const inquirer = require('inquirer');
-const { spawn } = require('child_process')
+var inquirer = require('inquirer'); //命令行交互模块
+var shell = require('shelljs');
 
+if (!shell.which('git')) {
+    shell.echo('Sorry, this script requires git');
+    shell.exit(1);
+}
 
 const getVersion = async () => {
     return new Promise((resolve, reject) => {
@@ -19,40 +23,16 @@ const getVersion = async () => {
     })
 }
 
-//   npm run release  -- --release-as  $argument
-//   npm run changelog
-//   git push --follow-tags origin master
-
-//   git add -A
-//   git commit -m 'docs: [build] changelog'
-//   git push
-const execCmd = async (cmd) => {
-    const cmds = cmd.split(' ');
-    const ls = spawn(cmds[0], cmds.slice(1));
-
-    ls.stdout.pipe(process.stdout);
-    ls.stdin.pipe(process.stdin);
-    ls.stderr.pipe(process.stderr);
-
-    return new Promise((resolve, reject) => {
-      ls.on('close', (code) => {
-          if (code === 0) {
-              resolve()
-              return;
-          }
-          reject('Error');
-      });
-    })
-}
 const main = async () => {
     const version = await getVersion();
-    console.log(`\nReleasing ${version} ...\n`);
-    await execCmd(`npm run release  -- --release-as  ${version}`);
-    await execCmd('npm run changelog');
-    await execCmd('git push --follow-tags origin master');
+    shell.echo(`\nReleasing ${version} ...\n`);
+    await shell.exec(`npm run release -- --release-as ${version}`);
+    await shell.exec('npm run changelog');
+    await shell.exec('git push --follow-tags origin master');
 
-    await execCmd('git add -A');
-    await execCmd('git commit -m \'docs: [build] changelog\'');
-    await execCmd('git push');
+    await shell.exec('git add -A');
+    await shell.exec(`git commit -m "docs(build): changelog"`);
+    await shell.exec('git push');
 }
+
 main()
