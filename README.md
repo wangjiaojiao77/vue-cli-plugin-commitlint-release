@@ -17,7 +17,7 @@ commitizen 使用的适配器是 [AngularJS's commit message convention](https:/
 
 ## 安装
 
-_作为一个 `Vue CLI` 安装，安装方法有2种：_
+_作为一个 `Vue CLI` 插件，安装方法有2种：_
 
 ```
 # 为了防止和已有的包冲突，可以提前移除 `node_modules` 后再安装
@@ -28,7 +28,7 @@ vue add commitlint-release
 vue invoke commitlint-release
 ```
 
-这时候你的项目里就会增加一个    `commitlint.config.js` 文件、`release.sh` 文件，以及 package.json 增加一些 `scripts`、`devDependencies`，以及一个 `config` 和 `husky` 的配置。
+这时候你的项目里就会增加一个    `commitlint.config.js` 文件、`release.sh` 文件，以及 package.json 里增加一些 `scripts`、`devDependencies`，以及一个 `config` 和 `husky` 的配置。
 
 
 下面只需要直接运行
