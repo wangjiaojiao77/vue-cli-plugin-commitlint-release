@@ -103,6 +103,12 @@ rm -rf node_modules
 npm install
 ```
 
+### permission denied
+```
+EACCES: permission denied
+```
+权限问题，命令行前加 sudo 或查看 [fixing npm permissions ](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) 寻求帮助
+
 ## Tips
 
 我会尽我最大努力来维护这个项目，所以有问题一定要给我提 [issues](https://github.com/wangjiaojiao77/vue-cli-plugin-commitlint-release/issues) 哟～
