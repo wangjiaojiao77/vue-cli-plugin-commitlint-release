@@ -20,9 +20,6 @@ commitizen 使用的适配器是 [AngularJS's commit message convention](https:/
 _作为一个 `Vue CLI` 插件，安装方法有2种：_
 
 ```
-# 为了防止和已有的包冲突，可以提前移除 `node_modules` 后再安装
-rm -rf node_modules
-
 vue add commitlint-release
 # or
 vue invoke commitlint-release
@@ -53,9 +50,6 @@ git add .
 ### 自动化 `commit message`
 ```
 npm run commit
-# or
-# 如果你的 NPM 5.2+，也可以执行以下命令
-npx git-cz
 ```
 
 ### 自动更新版本号并生成 `changelog`
@@ -64,7 +58,7 @@ npx git-cz
 npm run publish
 ```
 
-输入命令后，提示输入 [ major | minor | patch ]，以当前版本 1.0.0 为例：
+输入命令后，选择更新版本[ major | minor | patch ]，以当前版本 1.0.0 为例：
 
 - major：主版本号，当你做了不兼容的 API 修改。这时候的 version 应该为 2.0.0。
 - minor：次版本号，当你做了向下兼容的功能性新增。这时候的 version 应该为 1.1.0。
