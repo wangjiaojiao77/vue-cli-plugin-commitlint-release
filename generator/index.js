@@ -4,11 +4,9 @@ module.exports = (api) => {
 	api.extendPackage({
 		scripts: {
 			"release": "standard-version",
-			"commit": "npx git-cz",
+			"commit": "./node_modules/.bin/git-cz",
 			"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-			"push": "node commitlint.script.js",
-			"preinstall": "rm -rf node_modules",
-			"postinstall": "./node_modules/.bin/commitizen init cz-conventional-changelog --save --save-exact --force"
+			"push": "node commitlint.script.js"
 		},
 		config: {
 			"commitizen": {

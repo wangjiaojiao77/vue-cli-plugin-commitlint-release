@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-commitlint-release",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "这是一个集成了 commitizen、commitlint、standard-version、conventional-changelog 、conventional-changelog-cli 基础配置的 Vue CLI 插件。",
   "keywords": [
     "commitizen",
