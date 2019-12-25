@@ -61,7 +61,7 @@ npx git-cz
 ### 自动更新版本号并生成 `changelog`
 
 ```
-npm run publish
+npm run push
 ```
 
 输入命令后，提示输入 [ major | minor | patch ]，以当前版本 1.0.0 为例：
